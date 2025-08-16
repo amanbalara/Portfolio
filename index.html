@@ -11,7 +11,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
     }
 
     body {
@@ -23,6 +22,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .container {
@@ -41,6 +41,10 @@
       height: auto;
       margin-bottom: 20px;
       animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2 {
+      font-family: 'Russo One', sans-serif;
     }
 
     h1 {
@@ -69,6 +73,7 @@
       font-weight: bold;
       transition: transform 0.2s, box-shadow 0.3s;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      font-family: 'Orbitron', sans-serif;
     }
 
     .buttons a:hover {
@@ -90,6 +95,7 @@
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.3s;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      font-family: 'Orbitron', sans-serif;
     }
 
     .copy-email button:hover {
@@ -123,6 +129,13 @@
       margin-top: 40px;
       font-size: 0.9rem;
       color: #dcdcdc;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1rem; }
+      .buttons a { padding: 10px 18px; font-size: 0.9rem; }
     }
   </style>
 </head>
