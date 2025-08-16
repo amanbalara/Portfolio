@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Balara - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Russo+One&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0px 0px 10px rgba(255,255,255,0.3);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: #dcdcdc;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #00f0ff, #ff00ff);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .buttons a:hover {
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+
+    .copy-email {
+      margin-top: 20px;
+    }
+
+    .copy-email button {
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      background: linear-gradient(45deg, #00ff88, #00f0ff);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .copy-email button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px;
+      position: fixed;
+      z-index: 1;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #dcdcdc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"><img src="logo.png" alt="AB Logo"></div>
+    <h1>👋 Hi, I'm Aman Balara</h1>
+    <h2>IIT Delhi Student | HTML & CSS Web Pages | Freelance Projects</h2>
+
+    <div class="buttons">
+      <a href="https://www.linkedin.com/in/amanbalara" target="_blank">LinkedIn</a>
+      <a href="https://github.com/amanbalara" target="_blank">GitHub</a>
+      <a href="https://amanbalara.github.io/TimeTable/" target="_blank">IITD Timetable Project</a>
+    </div>
+
+    <div class="copy-email">
+      <p>Email: <strong id="email">connect.amanbalara@gmail.com</strong></p>
+      <button onclick="copyEmail()">📋 Copy Email</button>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by Aman | Open to Freelance Work</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Email copied!</div>
+
+  <script>
+    function copyEmail() {
+      const email = document.getElementById("email").innerText;
+      navigator.clipboard.writeText(email);
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
